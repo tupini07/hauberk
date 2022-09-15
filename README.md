@@ -49,4 +49,4 @@ Thanks for understanding.
 [splash]: https://i.imgur.com/qBRLNU5.png
 [dungeon]: https://i.imgur.com/AbaPbvU.png
 [sdk]: https://webdev.dartlang.org/tools/sdk
-[mit license]: https://github.com/munificent/hauberk/blob/master/COPYRIGHT
+[mit license]: https://github.com/tupini07/hauberk/blob/master/LICENSE.txt
