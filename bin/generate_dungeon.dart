@@ -1,7 +1,6 @@
-import 'package:piecemeal/piecemeal.dart';
-
-import 'package:hauberk/src/engine.dart';
 import 'package:hauberk/src/content.dart';
+import 'package:hauberk/src/engine.dart';
+import 'package:piecemeal/piecemeal.dart';
 
 /// A benchmark that just repeatedly generates dungeons for running in a
 /// profiler.

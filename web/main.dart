@@ -2,16 +2,15 @@ import 'dart:html' as html;
 import 'dart:js';
 import 'dart:math' as math;
 
-import 'package:malison/malison.dart';
-import 'package:malison/malison_web.dart';
-import 'package:piecemeal/piecemeal.dart';
-
 import 'package:hauberk/src/content.dart';
 import 'package:hauberk/src/debug.dart';
 import 'package:hauberk/src/engine.dart';
 import 'package:hauberk/src/ui/game_screen.dart';
 import 'package:hauberk/src/ui/input.dart';
 import 'package:hauberk/src/ui/main_menu_screen.dart';
+import 'package:malison/malison.dart';
+import 'package:malison/malison_web.dart';
+import 'package:piecemeal/piecemeal.dart';
 
 final _fonts = <TerminalFont>[];
 late final UserInterface<Input> _ui;
@@ -204,9 +203,11 @@ void _addFont(String name, int charWidth, [int? charHeight]) {
   button.onClick.listen((_) {
     for (var i = 0; i < _fonts.length; i++) {
       if (_fonts[i].name == name) {
+        // set the new font as active
         _font = _fonts[i];
         html.querySelector("#game")!.append(_font.canvas);
       } else {
+        // and set every other font as inactive
         _fonts[i].canvas.remove();
       }
     }
@@ -230,7 +231,8 @@ RetroTerminal _makeTerminal(
   width = math.max(width, 80);
   height = math.max(height, 40);
 
-  var scale = html.window.devicePixelRatio.toInt();
+  var pixelRation = html.window.devicePixelRatio.toInt();
+  var scale = pixelRation;
   var canvasWidth = charWidth * width;
   var canvasHeight = charHeight * height;
   canvas.width = canvasWidth * scale;
@@ -245,7 +247,7 @@ RetroTerminal _makeTerminal(
       canvas: canvas,
       charWidth: charWidth,
       charHeight: charHeight,
-      scale: html.window.devicePixelRatio.toInt());
+      scale: pixelRation);
 }
 
 /// Updates the character dimensions of the current terminal to fit the screen

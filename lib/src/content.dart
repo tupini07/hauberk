@@ -71,7 +71,7 @@ class GameContent implements Content {
     heroClass.startingItems.dropItem(1, hero.inventory.tryAdd);
 
     // TODO: Instead of giving the player access to all shops at once, consider
-    // letting the rescue shopkeepers from the dungeon to unlock better and
+    // letting the hero rescue shopkeepers from the dungeon to unlock better and
     // better shops over time.
     // Populate the shops.
     for (var shop in shops.values) {
